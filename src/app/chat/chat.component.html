@@ -1,0 +1,27 @@
+
+<div class="chat-container">
+    <div class="chat-window">
+      <ng-container *ngIf="!isUsernameSet">
+        <div class="username-input">
+            <img src="anon.jpg" alt="anonimo">
+            <div class="username-input">
+            <input [(ngModel)]="username" placeholder="Ingrese su nombre de usuario" />
+            <button (click)="setUsername()">Comenzar</button>
+            </div>
+        </div>
+      </ng-container>
+  
+      <ng-container *ngIf="isUsernameSet">
+        <div class="messages">
+          <div *ngFor="let message of messages" class="message">
+            <strong>{{ message.sender }}:</strong> {{ message.content }}
+          </div>
+        </div>
+        <div class="message-input">
+          <input [(ngModel)]="newMessage" placeholder="Escribe un mensaje..." />
+          <button (click)="sendMessage()">Enviar</button>
+        </div>
+      </ng-container>
+    </div>
+</div>
+  
