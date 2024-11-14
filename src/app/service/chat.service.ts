@@ -13,7 +13,7 @@ export class ChatService {
   constructor(private http : HttpClient) { }
 
   getMessages(): Observable<Message[]>{
-    return this.http.get<Message[]>(this.apiUrl);
+    return this.http.get<Message[]>('https://backend-tbkt.onrender.com/api/v1/messages');
   }
 
   sendMessage(message: Message): Observable<Message> {
