@@ -13,7 +13,10 @@ export class ChatService {
   constructor(private http : HttpClient) { }
 
   getMessages(): Observable<Message[]>{
-    return this.http.get<Message[]>('https://backend-tbkt.onrender.com/api/v1/messages');
+    return this.http.get<Message[]>('https://backend-tbkt.onrender.com/api/v1/messages',{
+      headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' },
+      params: { t: new Date().getTime().toString() }
+    });
   }
 
   sendMessage(message: Message): Observable<Message> {
