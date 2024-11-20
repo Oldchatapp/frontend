@@ -10,7 +10,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: dist/chatapp
+    baseDirectory: dist/chatapp/browser
     files:
       - '**/*'
   cache:

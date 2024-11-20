@@ -44,6 +44,7 @@
             "outputPath": "dist/chatapp",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
